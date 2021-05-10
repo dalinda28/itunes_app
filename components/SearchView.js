@@ -8,12 +8,14 @@ import {
   StyleSheet,
   Text,
   TextInput,
+  SafeAreaView,
   TouchableOpacity,
   View,
 } from "react-native";
 import { useEffect, useState } from "react/cjs/react.development";
 import MusicItem from "./MusicItem";
 import Result from "./Result";
+import { ScrollView } from "react-native";
 
 const formatResponse = (item) => {
   return {
@@ -60,7 +62,7 @@ const SearchView = ({ onAdd }) => {
   }, [input]);
 
   return (
-    <View>
+    <View style={{ flex: 1 }}>
       <Text style={styles.header}>Search</Text>
       <TextInput
         value={input}
@@ -68,22 +70,26 @@ const SearchView = ({ onAdd }) => {
         onChangeText={setInput}
         placeholder="Search iTunes ..."
       />
-      <FlatList
-        data={listResults}
-        renderItem={({ item }) => (
-          <TouchableOpacity
-            onPress={() => {
-              onAdd(item);
-              navigation.navigate('Result');
-            }}
-          >
-            <MusicItem item={item} />
-            <Button style={styles.button} color="tomato" title="Add to favories" onPress={() => { onAdd(item); navigation.navigate('Music');}}/>
-          </TouchableOpacity>
-          
-        )}
-        keyExtractor={(item) => item.id}
-      />
+      <View style={{ flex: 1 }}>
+        <SafeAreaView style={{ flex: 1 }}>
+          <FlatList
+            data={listResults}
+            renderItem={({ item }) => (
+              <TouchableOpacity
+                onPress={() => {
+                  onAdd(item);
+                  navigation.navigate('Result');
+                }}
+              >
+                <MusicItem item={item} />
+                <Button style={styles.button} color="tomato" title="Add to favories" onPress={() => { onAdd(item); navigation.navigate('Music'); }} />
+              </TouchableOpacity>
+
+            )}
+            keyExtractor={(item) => item.id}
+          />
+        </SafeAreaView>
+      </View>
     </View>
   );
 };
@@ -95,13 +101,14 @@ const styles = StyleSheet.create({
     color: "white",
     padding: 10,
   },
-  input:{
+  input: {
     backgroundColor: "white",
     padding: 10,
   },
-  button:{
+  button: {
     paddong: 200,
-  }
+  },
+
 });
 
 export default SearchView;

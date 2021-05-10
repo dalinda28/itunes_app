@@ -5,7 +5,7 @@ import Result from "./Result";
 
 const LibraryView = ({ libraryList }) => {
   return (
-    <View>
+    <View style={{ flex: 1 }}>
       <Text style={styles.header}>Library</Text>
       <FlatList
         data={libraryList}

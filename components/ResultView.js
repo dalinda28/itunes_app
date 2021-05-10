@@ -4,7 +4,7 @@ import Result from "./Result";
 
 const ResultView = ({ libraryList }) => {
   return (
-    <View>
+    <View style={{ flex: 1 }}>
       <Text style={styles.header}>Details Music</Text>
       <FlatList
         data={libraryList}
