@@ -3,6 +3,7 @@ import {
   Button,
   FlatList,
   StyleSheet,
+  ScrollView,
   Text,
   TextInput,
   TouchableOpacity,
@@ -53,21 +54,23 @@ const SearchView = ({ onAdd }) => {
 
   return (
     <View>
-      <Text style={styles.header}>SearchView</Text>
+      <Text style={styles.header}>Search</Text>
       <TextInput
         value={input}
+        style={styles.input}
         onChangeText={setInput}
         placeholder="Search iTunes"
       />
-      <FlatList
+      <ScrollView
         data={listResults}
+        onPress={() => { this.props.navigation.navigate('MusicItem', { id: result.trackId }) }}
         renderItem={({ item }) => (
           <TouchableOpacity
             onPress={() => {
               onAdd(item);
             }}
           >
-            <MusicItem item={item} />
+            <MusicItem item={item}/>
           </TouchableOpacity>
         )}
         keyExtractor={(item) => item.id}
@@ -83,6 +86,10 @@ const styles = StyleSheet.create({
     color: "white",
     padding: 10,
   },
+  input:{
+    backgroundColor: "white",
+    padding: 10,
+  }
 });
 
 export default SearchView;
