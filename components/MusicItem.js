@@ -2,12 +2,7 @@ import React from "react";
 import { Image, StyleSheet, Text, View } from "react-native";
 
 const MusicItem = ({ item }) => {
-  // title
-  // artist
-  // artwork
-  // genre
-  // year
-  // id
+
   return (
     <View style={styles.container}>
       <Image style={styles.image} source={{ uri: item.artwork }} />
