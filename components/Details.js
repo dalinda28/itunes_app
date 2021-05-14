@@ -13,12 +13,10 @@ const Result = ({ item }) => {
                 <Text style={styles.text}>Genre : {item.genre}</Text>
                 <Text style={styles.text}>Price : {item.price} $</Text>
                 <Button title='Listening preview'
-                    color="tomato"
+                    color="black"
                     style={styles.button}
                     onPress={() => Linking.openURL(item.url)} />
                 <Button style={styles.button} title="Favories" onPress={() => { onAdd(item); navigation.navigate('Music');}}/>
-
-
             </View>
         </View>
     );
@@ -37,7 +35,7 @@ const styles = StyleSheet.create({
         flexDirection: "row"
     },
     button:{
-        backgroundColor:"tomato"
+        backgroundColor:"black"
     }
 });
 

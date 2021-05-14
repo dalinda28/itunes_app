@@ -1,6 +1,6 @@
 import React from "react";
 import { FlatList, StyleSheet, Text, View } from "react-native";
-import Result from "./Result";
+import Details from "./Details";
 
 const ResultView = ({ libraryList }) => {
   return (
@@ -8,9 +8,8 @@ const ResultView = ({ libraryList }) => {
       <Text style={styles.header}>Details Music</Text>
       <FlatList
         data={libraryList}
-        renderItem={({ item }) => <Result item={item} />}
-        keyExtractor={(item) => item.id}
-      />
+        renderItem={({ item }) => <Details item={item} />}
+        keyExtractor={item => item.trackId}      />
     </View>
   );
 };
@@ -18,7 +17,7 @@ const ResultView = ({ libraryList }) => {
 const styles = StyleSheet.create({
   header: {
     fontSize: 30,
-    backgroundColor: "tomato",
+    backgroundColor: "black",
     color: "white",
     padding: 10,
   },

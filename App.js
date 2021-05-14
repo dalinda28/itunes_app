@@ -24,19 +24,21 @@ const App = () => {
             let iconName;
             switch (route.name) {
               case "Music":
-                iconName = focused ? "library" : "library-outline";
+                iconName = focused ? "heart" : "heart-outline";
                 break;
               case "Search":
                 iconName = focused ? "musical-notes" : "musical-notes-outline";
                 break;
+              case "Result": 
+                iconName = focused ? "library" : "library-outline";
               default:
-                iconName = "ban";
+                iconName = focused ? "library" : "library-outline";
                 break;
             }
             return <Ionicons name={iconName} size={size} color={color} />;
           },
         })}
-        tabBarOptions={{ activeTintColor: "tomato", inactiveTintColor: "gray" }}
+        tabBarOptions={{ activeTintColor: "black", inactiveTintColor: "gray" }}
       >
         <Tabs.Screen name="Search">
           {(props) => <SearchView {...props} onAdd={addItem} />}

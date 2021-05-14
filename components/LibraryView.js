@@ -1,15 +1,14 @@
 import React from "react";
 import { FlatList, StyleSheet, Text, View, Button} from "react-native";
-import MusicItem from "./MusicItem";
-import Result from "./Result";
+import Favorites from "./Favorites";
 
 const LibraryView = ({ libraryList }) => {
   return (
     <View style={{ flex: 1 }}>
-      <Text style={styles.header}>Library</Text>
+      <Text style={styles.header}>Favorites</Text>
       <FlatList
         data={libraryList}
-        renderItem={({ item }) => <MusicItem item={item} />}
+        renderItem={({ item }) => <Favorites item={item} />}
         keyExtractor={(item) => item.id}
       />
     </View>
@@ -19,7 +18,7 @@ const LibraryView = ({ libraryList }) => {
 const styles = StyleSheet.create({
   header: {
     fontSize: 30,
-    backgroundColor: "tomato",
+    backgroundColor: "black",
     color: "white",
     padding: 10,
   },

@@ -13,9 +13,7 @@ import {
   View,
 } from "react-native";
 import { useEffect, useState } from "react/cjs/react.development";
-import MusicItem from "./MusicItem";
-import Result from "./Result";
-import { ScrollView } from "react-native";
+import Favorites from "./Favorites";
 
 const formatResponse = (item) => {
   return {
@@ -81,8 +79,8 @@ const SearchView = ({ onAdd }) => {
                   navigation.navigate('Result');
                 }}
               >
-                <MusicItem item={item} />
-                <Button style={styles.button} color="tomato" title="Add to favories" onPress={() => { onAdd(item); navigation.navigate('Music'); }} />
+                <Favorites item={item} />
+                <Button style={styles.button} color="black" title="Add to favories" onPress={() => { onAdd(item); navigation.navigate('Music'); }} />
               </TouchableOpacity>
 
             )}
@@ -97,7 +95,7 @@ const SearchView = ({ onAdd }) => {
 const styles = StyleSheet.create({
   header: {
     fontSize: 30,
-    backgroundColor: "tomato",
+    backgroundColor: "black",
     color: "white",
     padding: 10,
   },
