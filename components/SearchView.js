@@ -66,7 +66,7 @@ const SearchView = ({ onAdd }) => {
         value={input}
         style={styles.input}
         onChangeText={setInput}
-        placeholder="Search iTunes ..."
+        placeholder="Search artist or music ..."
       />
       <View style={{ flex: 1 }}>
         <SafeAreaView style={{ flex: 1 }}>
