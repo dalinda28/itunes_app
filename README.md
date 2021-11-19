@@ -3,6 +3,9 @@ Application React native
 
 ## Screenshoots 
 
+## Screenshoots 
+![alt text](https://github.com/dalinda28/Movie_Rating/blob/main/MovieRating1.png?raw=true)
+
 ![alt text](https://github.com/dalinda28/Movie_Rating/blob/main/Itunes_app1.png?raw=true)
 
 ![alt text](https://github.com/dalinda28/Movie_Rating/blob/main/Itunes_app2.png?raw=true)
